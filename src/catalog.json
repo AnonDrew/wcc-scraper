@@ -1,0 +1,127 @@
+[
+ {
+  "prefix": "COMSC",
+  "num": "102",
+  "name": "Internet of Things (IoT) Fundamentals"
+ },
+ {
+  "prefix": "COMSC",
+  "num": "100",
+  "name": "Introduction to Computing Concepts"
+ },
+ {
+  "prefix": "COMSC",
+  "num": "101",
+  "name": "Computer Programming 1"
+ },
+ {
+  "prefix": "COMSC",
+  "num": "106",
+  "name": "IT Essentials (A+)"
+ },
+ {
+  "prefix": "COMSC",
+  "num": "110",
+  "name": "Computer Programming 2"
+ },
+ {
+  "prefix": "COMSC",
+  "num": "116",
+  "name": "LINUX Operating System"
+ },
+ {
+  "prefix": "COMSC",
+  "num": "118",
+  "name": "CCNA1: Introduction to Networks"
+ },
+ {
+  "prefix": "COMSC",
+  "num": "120",
+  "name": "Internship in Computer Science"
+ },
+ {
+  "prefix": "COMSC",
+  "num": "121",
+  "name": "IT Essentials 2: NOS"
+ },
+ {
+  "prefix": "COMSC",
+  "num": "123",
+  "name": "Home Technology Integration"
+ },
+ {
+  "prefix": "COMSC",
+  "num": "124",
+  "name": "CCNA2: Switching, Routing, and Wireless Essentials (SRWE)"
+ },
+ {
+  "prefix": "COMSC",
+  "num": "128",
+  "name": "CCNA3: Enterprise Networking, Security, and Automation"
+ },
+ {
+  "prefix": "COMSC",
+  "num": "130",
+  "name": "Voice Over IP"
+ },
+ {
+  "prefix": "COMSC",
+  "num": "132",
+  "name": "CCNA4: Developmental Networks"
+ },
+ {
+  "prefix": "COMSC",
+  "num": "134",
+  "name": "Network Administration"
+ },
+ {
+  "prefix": "COMSC",
+  "num": "136",
+  "name": "Advanced Routing Configuration"
+ },
+ {
+  "prefix": "COMSC",
+  "num": "138",
+  "name": "Remote Access"
+ },
+ {
+  "prefix": "COMSC",
+  "num": "142",
+  "name": "Network Security (CS)"
+ },
+ {
+  "prefix": "COMSC",
+  "num": "145",
+  "name": "Intro to Computer Forensics"
+ },
+ {
+  "prefix": "COMSC",
+  "num": "201",
+  "name": "Data Structures"
+ },
+ {
+  "prefix": "COMSC",
+  "num": "207",
+  "name": "Java Programming"
+ },
+ {
+  "prefix": "COMSC",
+  "num": "208A",
+  "name": "GUI Development"
+ },
+ {
+  "prefix": "COMSC",
+  "num": "214",
+  "name": "Web Programming"
+ },
+ {
+  "prefix": "COMSC",
+  "num": "217",
+  "name": "Computer Architecture"
+ },
+ {
+  "prefix": "COMSC",
+  "num": "210",
+  "name": "Discrete Structures for Computer Science"
+ }
+]

@@ -1,16 +1,24 @@
 import { AxiosResponse } from "axios";
 import { JSDOM } from "jsdom";
+import { Course } from "./Course";
 
-export async function parseResponse(response: AxiosResponse<any, any>): Promise<string[]> {
-    let courses: string[] = [];
-    const sep: string = "\t";
-
+export async function parseResponse(response: AxiosResponse<any, any>): Promise<Course[]> {
     const webpage: JSDOM = new JSDOM(response.data);
     const elements: NodeListOf<Element> = webpage.window.document.querySelectorAll("a[aria-expanded=\"false\"]");
 
+    const sep: string = "\t";
+    let courses: Course[] = [];
+
     for (const a of elements) {
         if (a.textContent !== null) {
-            courses.push(a.textContent.replace(" ", sep).replace(String.fromCharCode(160, 45, 160), sep));
+            const aCleanUp: string = a.textContent.replace(" ", sep).replace(String.fromCharCode(160, 45, 160), sep);
+
+            const courseData: string[] = aCleanUp.split(sep);
+            courses.push({
+                prefix: courseData[0],
+                num: courseData[1],
+                name: courseData[2],
+            });
         }
     }
 
@@ -18,7 +26,7 @@ export async function parseResponse(response: AxiosResponse<any, any>): Promise<
 }
 
 export function parseURL(url: string): string[] {
-    url = url.slice(url.indexOf("?") + 1);
+    url = url.slice(url.indexOf("?"));
 
     const splitPoint: string = "page=";
     const parsedURL: string[] = [

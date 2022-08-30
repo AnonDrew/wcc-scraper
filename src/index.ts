@@ -1,20 +1,30 @@
 import { AxiosResponse } from "axios";
-import { generateCSV } from "./formatter";
-import * as parsers from "./parsers";
-import fetchCatalogPage from "./requests";
+import { Course } from "./Course";
+import { fetchCatalogPage } from "./requests";
+import { parseURL, parseResponse } from "./parsers";
+import { writeJSON, writeCSV } from "./writers";
 
 async function main() {
-    const queryURL: string[] = parsers.parseURL(process.argv[3]), pages: number = parseInt(process.argv[2]);
+    if (process.argv[4] === undefined || (process.argv[2] !== "csv" && process.argv[2] !== "json")) {
+        console.log("Bad args!");
+        process.exit(1);
+    }
 
-    let courses: string[] = [];
-
+    const queryURL: string[] = parseURL(process.argv[4]), pages: number = parseInt(process.argv[3]);
+    let courses: Course[] = [];
     for (let page: number = 1; page <= pages; ++page) {
         const response: AxiosResponse<any, any> = await fetchCatalogPage(queryURL[0] + page.toString() + queryURL[1]);
 
-        courses = courses.concat(await parsers.parseResponse(response));
+        courses = courses.concat(await parseResponse(response));
     }
 
-    generateCSV(courses);
+    const format: string = process.argv[2];
+    if (format === "json") {
+        writeJSON(courses);
+    }
+    else if (format === "csv") {
+        writeCSV(courses);
+    }
 }
 
 main();

@@ -4,7 +4,8 @@
   "description": "Generate a .json or .csv containing all courses in specified https://catalog.sunywcc.edu/search_advanced.php? prefix query pages.",
   "main": "index.js",
   "scripts": {
-    "test": "ts-node ./src/index.ts json 3 'https://catalog.sunywcc.edu/search_advanced.php?cur_cat_oid=47&ecpage=1&cpage=1&ppage=1&pcpage=1&spage=1&tpage=1&search_database=Search&filter%5Bkeyword%5D=COMSC&filter%5Bexact_match%5D=1&filter%5B3%5D=1&filter%5B31%5D=1&filter%5B1%5D=1&filter%5B28%5D=1&filter%5B30%5D=1'"
+    "testjson": "ts-node ./src/index.ts json 3 'https://catalog.sunywcc.edu/search_advanced.php?cur_cat_oid=47&ecpage=1&cpage=1&ppage=1&pcpage=1&spage=1&tpage=1&search_database=Search&filter%5Bkeyword%5D=COMSC&filter%5Bexact_match%5D=1&filter%5B3%5D=1&filter%5B31%5D=1&filter%5B1%5D=1&filter%5B28%5D=1&filter%5B30%5D=1'",
+    "testcsv": "ts-node ./src/index.ts csv 3 'https://catalog.sunywcc.edu/search_advanced.php?cur_cat_oid=47&ecpage=1&cpage=1&ppage=1&pcpage=1&spage=1&tpage=1&search_database=Search&filter%5Bkeyword%5D=COMSC&filter%5Bexact_match%5D=1&filter%5B3%5D=1&filter%5B31%5D=1&filter%5B1%5D=1&filter%5B28%5D=1&filter%5B30%5D=1'"
   },
   "author": "Drew S.",
   "license": "MIT",

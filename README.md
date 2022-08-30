@@ -9,7 +9,7 @@ Big thanks to **@[roobscoob](https://github.com/roobscoob)** for code references
 6. The third argument will be the URL displayed in the address bar after step 3, **enclosed in single ' ' quotes**.
 
 # Argument Ex.
-json 3 'https://catalog.sunywcc.edu/search_advanced.php?your_course_prefix_query_info'
+json 3 'https://catalog.sunywcc.edu/search_advanced.php?your_course_prefix_query_info'  
 (2 more examples can be found in the package.json "scripts" property)
 
 # .csv and .json Ex.

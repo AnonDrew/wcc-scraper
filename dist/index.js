@@ -9,18 +9,28 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const formatter_1 = require("./formatter");
-const parsers = require("./parsers");
 const requests_1 = require("./requests");
+const parsers_1 = require("./parsers");
+const writers_1 = require("./writers");
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
-        const queryURL = parsers.parseURL(process.argv[3]), pages = parseInt(process.argv[2]);
+        if (process.argv[4] === undefined || (process.argv[2] !== "csv" && process.argv[2] !== "json")) {
+            console.log("Bad args!");
+            process.exit(1);
+        }
+        const queryURL = (0, parsers_1.parseURL)(process.argv[4]), pages = parseInt(process.argv[3]);
         let courses = [];
         for (let page = 1; page <= pages; ++page) {
-            const response = yield (0, requests_1.default)(queryURL[0] + page.toString() + queryURL[1]);
-            courses = courses.concat(yield parsers.parseResponse(response));
+            const response = yield (0, requests_1.fetchCatalogPage)(queryURL[0] + page.toString() + queryURL[1]);
+            courses = courses.concat(yield (0, parsers_1.parseResponse)(response));
         }
-        (0, formatter_1.generateCSV)(courses);
+        const format = process.argv[2];
+        if (format === "json") {
+            (0, writers_1.writeJSON)(courses);
+        }
+        else if (format === "csv") {
+            (0, writers_1.writeCSV)(courses);
+        }
     });
 }
 main();

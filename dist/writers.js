@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.writeCSV = exports.writeJSON = void 0;
+const fs_1 = require("fs");
+const csv_stringify_1 = require("csv-stringify");
+const genFileName = "catalog";
+const writeJSON = (courses) => (0, fs_1.writeFile)(genFileName + ".json", JSON.stringify(courses, undefined, 1), () => { });
+exports.writeJSON = writeJSON;
+const writeCSV = (data) => (0, csv_stringify_1.stringify)(data, { header: true }, (undefined, output) => (0, fs_1.writeFile)(genFileName + ".csv", output, () => { }));
+exports.writeCSV = writeCSV;

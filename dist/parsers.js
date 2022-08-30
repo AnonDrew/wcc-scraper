@@ -13,13 +13,19 @@ exports.parseURL = exports.parseResponse = void 0;
 const jsdom_1 = require("jsdom");
 function parseResponse(response) {
     return __awaiter(this, void 0, void 0, function* () {
-        let courses = [];
-        const sep = "\t";
         const webpage = new jsdom_1.JSDOM(response.data);
         const elements = webpage.window.document.querySelectorAll("a[aria-expanded=\"false\"]");
+        const sep = "\t";
+        let courses = [];
         for (const a of elements) {
             if (a.textContent !== null) {
-                courses.push(a.textContent.replace(" ", sep).replace(String.fromCharCode(160, 45, 160), sep));
+                const aCleanUp = a.textContent.replace(" ", sep).replace(String.fromCharCode(160, 45, 160), sep);
+                const courseData = aCleanUp.split(sep);
+                courses.push({
+                    prefix: courseData[0],
+                    num: courseData[1],
+                    name: courseData[2],
+                });
             }
         }
         return courses;
@@ -27,7 +33,7 @@ function parseResponse(response) {
 }
 exports.parseResponse = parseResponse;
 function parseURL(url) {
-    url = url.slice(url.indexOf("?") + 1);
+    url = url.slice(url.indexOf("?"));
     const splitPoint = "page=";
     const parsedURL = [
         url.slice(0, url.indexOf(splitPoint) + splitPoint.length),

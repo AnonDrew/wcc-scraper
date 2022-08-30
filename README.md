@@ -10,6 +10,7 @@ Big thanks to **@[roobscoob](https://github.com/roobscoob)** for code references
 
 # Argument Ex.
 json 3 'https://catalog.sunywcc.edu/search_advanced.php?your_course_prefix_query_info'
+(2 more examples can be found in the package.json "scripts" property)
 
 # .csv and .json Ex.
 Examples of the output can be found in the src directory, both named "catalog" with the corresponding file extension.

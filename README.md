@@ -1,4 +1,5 @@
 Big thanks to **@[roobscoob](https://github.com/roobscoob)** for code references & general advice!
+This was my first web scraping project and my first time using Node.js and TypeScript.
 
 # Instructions
 1. Visit https://catalog.sunywcc.edu/search_advanced.php
